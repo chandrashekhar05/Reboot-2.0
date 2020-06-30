@@ -8,7 +8,7 @@ NOT DONE YET ;_;
 #PROBLEM 2: Play with directory 
 
 #QUE-1: create a directory without name from command line
-#ANS  : 1.	mkdir ' '
+#ANS  : 	1.	mkdir ' '
 		2.  mkdir ''$'\n'
 		3.  mkdir ''$'\t'
 
