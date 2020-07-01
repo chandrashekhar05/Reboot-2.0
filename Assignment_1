@@ -2,72 +2,72 @@
 
 #PROBLEM 1: Block System call
 
-	NOT DONE YET ;_;
+NOT DONE YET ;_;
 
 
 #PROBLEM 2: Play with directory 
 
-	#QUE-1: create a directory without name from command line
-	#ANS  : 	1.  mkdir ' '
-			2.  mkdir ''$'\n'
-			3.  mkdir ''$'\t'
+#QUE-1: create a directory without name from command line
+#ANS  : 	1.  mkdir ' '
+		2.  mkdir ''$'\n'
+		3.  mkdir ''$'\t'
 
-	#QUE-2: create a directory with name "-okgoogle"
-	#ANS  : mkdir ./-okgoogle
+#QUE-2: create a directory with name "-okgoogle"
+#ANS  : mkdir ./-okgoogle
 
 #PROBLEM 3: Create a directory structure
-	#ANS : mkdir -p  A/{B/{G/K/Reboot.txt,H/J/Reboot.txt},C/{I/J/Reboot.txt,J/L/Reboot.txt},D/{F/L/Reboot.txt,E/M/Reboot.txt}}
+#ANS : mkdir -p  A/{B/{G/K/Reboot.txt,H/J/Reboot.txt},C/{I/J/Reboot.txt,J/L/Reboot.txt},D/{F/L/Reboot.txt,E/M/Reboot.txt}}
 
 #PROBLEM 4: Share and files and folder
-	#Step: 1 create two users name jack and Jill  from command line
-	#login with root user and add user using useradd command
-	-----In Root Terminal-----
-	useradd jack		#add user with 'jack' username
-	passwd jack			#set password for jack user
+#Step: 1 create two users name jack and Jill  from command line
+#login with root user and add user using useradd command
+-----In Root Terminal-----
+useradd jack		#add user with 'jack' username
+passwd jack			#set password for jack user
 
-	useradd jill  		#add user with 'jill' username
-	passwd jill 		#set password for jill user
+useradd jill  		#add user with 'jill' username
+passwd jill 		#set password for jill user
 
-	#Step 2: create all the data under home directory of each users 
+#Step 2: create all the data under home directory of each users 
 
-	#Step 3: login with jack user and create a file name  jack.txt using vim editor and write "hello jack"
-	# login using jack's creadiantials
-	-----In Terminal-----
-	vi jack.txt
-	#write "hello jack" end exit from vi
-	:wq 		#command to save and exit from vi editor
-	-----Back In Terminal-----
+#Step 3: login with jack user and create a file name  jack.txt using vim editor and write "hello jack"
+# login using jack's creadiantials
+-----In Terminal-----
+vi jack.txt
+#write "hello jack" end exit from vi
+:wq 		#command to save and exit from vi editor
+-----Back In Terminal-----
 
-	#Step 4: from jack user also create two directories name jack1 & jack2
-	mkdir jack1 jack2		#create directory
-	-----Logout from jack-----
+#Step 4: from jack user also create two directories name jack1 & jack2
+mkdir jack1 jack2		#create directory
+-----Logout from jack-----
 
-	#Step 5: now login from Jill user and create a file. Jill.txt using vim editor and write "hey jill"
-	#login using jill's crediantials
-	-----In Terminal-----
-	vi jill.txt
-	#write "hey jill" end exit from vi
-	:wq 		#command to save and exit from vi editor
-	-----Back In Terminal-----
+#Step 5: now login from Jill user and create a file. Jill.txt using vim editor and write "hey jill"
+#login using jill's crediantials
+-----In Terminal-----
+vi jill.txt
+#write "hey jill" end exit from vi
+:wq 		#command to save and exit from vi editor
+-----Back In Terminal-----
 
-	#Step 6: from jill user also create two directories name jill1 & jill2
-	mkdir jill1 jill2		#create directory
+#Step 6: from jill user also create two directories name jill1 & jill2
+mkdir jill1 jill2		#create directory
 
 
-	swap these files and directories in between users  and to swap don't use root account.
-	-----Logged In As Jill User-----
-	#Setting access permission for user jack
-	setfacl -m u:jack:rwx /home/jill jill.txt jill1 jill2 
-	-----Logout from jill-----
+swap these files and directories in between users  and to swap don't use root account.
+-----Logged In As Jill User-----
+#Setting access permission for user jack
+setfacl -m u:jack:rwx /home/jill jill.txt jill1 jill2 
+-----Logout from jill-----
 
-	-----Login as jack-----
-	-----In Terminal-----
-	ls /home/jill/ 			#it list jill's directory in jack's userspace
+-----Login as jack-----
+-----In Terminal-----
+ls /home/jill/ 			#it list jill's directory in jack's userspace
 
-	#setting access permission for user jill
-	setfacl -m u:jill:rwx /home/jack jack.txt jack1 jack2 
-	-----Logout from jack-----
+#setting access permission for user jill
+setfacl -m u:jill:rwx /home/jack jack.txt jack1 jack2 
+-----Logout from jack-----
 
-	-----Login as jill-----
-	-----In Terminal-----
-	ls /home/jack/ 			#it list jack's directory in jill's userspace
+-----Login as jill-----
+-----In Terminal-----
+ls /home/jack/ 			#it list jack's directory in jill's userspace
