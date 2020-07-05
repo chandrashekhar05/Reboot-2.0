@@ -15,10 +15,15 @@ NOT DONE YET ;_;
 #QUE-2: create a directory with name "-okgoogle"
 #ANS  : mkdir ./-okgoogle
 
+
+
 #PROBLEM 3: Create a directory structure
 #ANS : mkdir -p  A/{B/{G/K/Reboot.txt,H/J/Reboot.txt},C/{I/J/Reboot.txt,J/L/Reboot.txt},D/{F/L/Reboot.txt,E/M/Reboot.txt}}
 
+
+
 #PROBLEM 4: Share and files and folder
+
 #Step: 1 create two users name jack and Jill  from command line
 #login with root user and add user using useradd command
 -----In Root Terminal-----
@@ -28,7 +33,9 @@ passwd jack			#set password for jack user
 useradd jill  		#add user with 'jill' username
 passwd jill 		#set password for jill user
 
+
 #Step 2: create all the data under home directory of each users 
+
 
 #Step 3: login with jack user and create a file name  jack.txt using vim editor and write "hello jack"
 # login using jack's creadiantials
@@ -38,9 +45,11 @@ vi jack.txt
 :wq 		#command to save and exit from vi editor
 -----Back In Terminal-----
 
+
 #Step 4: from jack user also create two directories name jack1 & jack2
 mkdir jack1 jack2		#create directory
 -----Logout from jack-----
+
 
 #Step 5: now login from Jill user and create a file. Jill.txt using vim editor and write "hey jill"
 #login using jill's crediantials
@@ -49,6 +58,7 @@ vi jill.txt
 #write "hey jill" end exit from vi
 :wq 		#command to save and exit from vi editor
 -----Back In Terminal-----
+
 
 #Step 6: from jill user also create two directories name jill1 & jill2
 mkdir jill1 jill2		#create directory
@@ -71,3 +81,27 @@ setfacl -m u:jill:rwx /home/jack jack.txt jack1 jack2
 -----Login as jill-----
 -----In Terminal-----
 ls /home/jack/ 			#it list jack's directory in jill's userspace
+
+
+#PROBLEM 5: Play with files and directories 
+
+#QUE 1: create  3 files named   abc.txt  ok  fine  g.txt  /tmp directory 
+#ANS  : cd /tmp
+	touch abc.txt 'ok fine' g.txt
+	
+#QUE 2: create  4  directories   aa aaa aaaa  under  /tmp directory 
+#ANS  :	mkdir aa aaa aaaa under
+
+#QUE 3: give ls command to  list the content of  /tmp directory make sure it will only list the content (file|directory)  having 2 char in their name.
+#ANS  : ls -ad ??
+
+
+
+#PROBLEM 6: Run command without any output
+- open terminal and type any command.
+- once you press enter your output of given command must not  print.
+- you are not allowed to redirect output anywhere. 
+
+#ANS :  -----Open Terminal-----
+	bash -D
+	Press CTRL+D to exit.
