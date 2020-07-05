@@ -104,4 +104,5 @@ ls /home/jack/ 			#it list jack's directory in jill's userspace
 
 #ANS :  -----Open Terminal-----
 	bash -D
-	Press CTRL+D to exit.
+	#Now insert any command, its output will not print
+	#Press CTRL+D to exit.
